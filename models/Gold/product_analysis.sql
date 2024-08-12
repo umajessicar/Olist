@@ -13,3 +13,5 @@ SELECT
 FROM {{ ref('products_sales') }} ps
 JOIN {{ ref('product_reviews') }} pc ON ps.product_id = pc.product_id
 ORDER BY ps.total_sales DESC
+
+

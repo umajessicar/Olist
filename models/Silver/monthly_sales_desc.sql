@@ -10,4 +10,12 @@ FROM {{ ref('Orders') }} o
 JOIN {{ ref('order_items') }} oi ON o.order_id = oi.order_id
 JOIN {{ ref('Products') }} p ON oi.product_id = p.product_id
 GROUP BY month, p.product_category_name
+order by total_sales DESC
+
+
+
+
+
+
+
 

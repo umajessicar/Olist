@@ -1,7 +1,7 @@
-WITH order_counts AS (
+WITH category_sales AS (
   SELECT
     p.product_category_name AS Category_Name,
-    COUNT(oi.order_id) AS Purchases
+    SUM(oi.price * oi.order_item_id) AS Total_Revenue
   FROM
     {{ ref('order_items') }} oi
   JOIN
@@ -14,11 +14,12 @@ WITH order_counts AS (
 
 SELECT
   Category_Name,
-  Purchases
+  Total_Revenue
 FROM
-  order_counts
+  category_sales
 ORDER BY
-  Purchases DESC
-LIMIT 10
+  Total_Revenue DESC
+
+
 
 
