@@ -48,6 +48,7 @@ Esta categoria tem um grande número de comentários (468), mas a avaliação m�
 <img src="https://github.com/umajessicar/Olist/issues/4#issue-2472215138" width="700px" />
 </div>
 
+**Outros Insights:**
 
 **Produtos Bem Avaliados Vendem Mais:** A correlação entre avaliações altas e volume de vendas é evidente, com a maioria dos produtos mais vendidos recebendo boas avaliações dos clientes.
 
