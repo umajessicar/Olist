@@ -31,7 +31,8 @@ Fiz uma query que junta dados de vendas de produtos (products_sales) com informa
 
 Produtos dessa categoria são consistentemente bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
 O frete para esses produtos varia, mas permanece relativamente acessível, o que pode estar contribuindo positivamente para a decisão de compra.
-Categoria PCS:
+
+**Categoria PCS:**
 
 Este produto específico apresenta um valor de pedido médio extremamente alto (R$ 1.397,12) e uma alta avaliação média (4,59). Isso pode indicar que o produto é de alta qualidade e provavelmente atende a um nicho específico, o que justifica o preço elevado e a boa recepção do público.
 
