@@ -1,6 +1,6 @@
 # Análise Exploratória E-commerce (Olist)
-Este projeto realiza uma série de análises sobre os dados de vendas da Olist, focando em diferentes aspectos como vendas por tamanho de loja, desempenho de produtos e a relação entre avaliações, frete e vendas. 
-Utilizei Google BigQuery como Datawarehouse para armazenar e consultar os dados, e dbt (Data Build Tool) para transformar e preparar os dados para análise.
+Este projeto realiza uma série de análises sobre os dados de vendas da Olist, focando em diferentes aspectos como desempenho de produtos e a relação entre avaliações, frete e vendas. 
+Utilizei Google BigQuery como data warehouse para armazenar e consultar os dados, e dbt (Data Build Tool) para transformar e preparar os dados para análise.
 
 # Estrutura do Projeto
 
