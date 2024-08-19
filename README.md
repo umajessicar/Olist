@@ -16,8 +16,6 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 
 **As tabelas finais deste projeto são:**
 
-**final_store_analysis:** Análise de vendas por tamanho de loja e categoria de produto.
-
 **freight_sales:** Análise de vendas baseada na média do valor do frete.
 
 **product_analysis:** Desempenho detalhado de produtos, incluindo vendas, valor médio do pedido, valor médio do frete, número de comentários e avaliação média.
@@ -25,22 +23,55 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 **reviews_sales:** Análise da relação entre vendas e satisfação do cliente, categorizando produtos por nível de satisfação.
 
 
+# Análise de Desempenho e Satisfação de Produtos por Categoria
 
-# Qual é o desempenho das categorias em termos de frequência de compra e valor total?
+Fiz uma query que junta dados de vendas de produtos (products_sales) com informações de avaliações e comentários (product_reviews). A união entre essas duas tabelas é feita com base no product_id, e o resultado final é ordenado pela métrica de vendas totais (total_sales), listando os produtos mais vendidos primeiro.
 
-# Qual é o impacto dos custos de frete nas vendas totais e na média de vendas por produto?
+**Categoria de Beleza e Saúde:**
 
-**Volume Total de Vendas e Custo de Frete:**
-   
-Frete Baixo: Os produtos com custo de frete mais baixo geraram um total de vendas de aproximadamente 7.23 milhões, distribuídos por 24.163 produtos. Isso indica que produtos com fretes mais baixos podem ter maior volume de vendas.
+Produtos dessa categoria são consistentemente bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
+O frete para esses produtos varia, mas permanece relativamente acessível, o que pode estar contribuindo positivamente para a decisão de compra.
+Categoria PCS:
 
-Frete Alto: Os produtos com frete mais alto geraram um total de vendas de cerca de 6.36 milhões, mas com um número significativamente menor de produtos, 8.788. Isso sugere que, embora o volume de vendas seja alto, há uma menor quantidade de produtos com esse tipo de frete.
+Este produto específico apresenta um valor de pedido médio extremamente alto (R$ 1.397,12) e uma alta avaliação média (4,59). Isso pode indicar que o produto é de alta qualidade e provavelmente atende a um nicho específico, o que justifica o preço elevado e a boa recepção do público.
 
-**Média de Vendas por Produto:**
+**Categoria Informática e Acessórios:**
 
-Frete Baixo: A média de vendas por produto para os itens com frete baixo é de aproximadamente 299.34. Isso indica que, embora esses produtos sejam mais numerosos, o valor médio das vendas por produto é relativamente menor.
+Embora tenha uma média de frete relativamente alta, os produtos desta categoria têm um bom desempenho em termos de vendas e satisfação do cliente (4,22). A alta quantidade de comentários (326) sugere que esses produtos são populares e frequentemente adquiridos.
 
-Frete Alto: A média de vendas por produto para os itens com frete alto é significativamente maior, cerca de 723.57. Isso sugere que, mesmo com custos de frete mais altos, esses produtos conseguem manter um valor médio de vendas elevado, o que pode compensar o custo adicional.
+**Categoria Cama, Mesa e Banho:**
+
+Esta categoria tem um grande número de comentários (468), mas a avaliação média é um pouco mais baixa (3,90). Isso pode indicar que, apesar da popularidade, há alguns problemas de qualidade ou expectativas não atendidas que podem estar afetando a percepção geral do produto.
+
+<div align="center">
+<img src="https://github.com/umajessicar/Olist/issues/4#issue-2472215138" width="700px" />
+</div>
+
+
+**Produtos Bem Avaliados Vendem Mais:** A correlação entre avaliações altas e volume de vendas é evidente, com a maioria dos produtos mais vendidos recebendo boas avaliações dos clientes.
+
+**Frete impacta diferentes categorias de maneiras variadas:** Produtos com fretes mais baixos como "Relógios e Presentes" podem estar em maior demanda devido ao custo adicional reduzido para o cliente. Em contrapartida, categorias como "Cool Stuff" ainda conseguem boas vendas, mesmo com fretes mais altos.
+
+**Alta Demanda por Categorias Específicas:** "Beleza e Saúde" e "Informática e Acessórios" são categorias de destaque, com múltiplos produtos entre os top 10, sugerindo que essas áreas podem ser alvos para expandir a linha de produtos.
+
+
+# Volume Total de Vendas e Custo de Frete:
+
+Nesta análise, explorei a relação entre o custo de frete e o volume de vendas, buscando entender como diferentes faixas de frete impactam o comportamento de compra dos consumidores. Foram definidas duas categorias de valores de frete - Low (baixo), High (alto). Considerei Low todos os valores na média e abaixo dela, já a High, os valores são acima da média. 
+
+<div align="center">
+<img src="https://github.com/umajessicar/Olist/issues/3#issue-2472162937" width="700px" />
+</div>
+
+- A faixa de frete "Low" gerou um maior volume total de vendas ($7.232.882,81) em comparação com a faixa "High" ($6.358.760,89). Isso sugere que, em termos absolutos, produtos com frete mais baixo são mais populares ou têm uma demanda maior.
+  
+**Número de Produtos Vendidos:**
+
+- Um número significativamente maior de produtos foi vendido na faixa de frete "Low" (24.163 produtos) em comparação com a faixa "High" (8.788 produtos). Isso indica que os consumidores tendem a comprar mais produtos quando o frete é mais baixo.
+  
+**Média de Preço por Produto:**
+
+- No entanto, a média de preço por produto é significativamente maior para a faixa de frete "High" ($723,57) em comparação com a faixa de frete "Low" ($299,34). Isso sugere que, embora menos produtos sejam vendidos com frete mais alto, aqueles que são vendidos têm um valor unitário mais alto, ou seja, são produtos mais caros ou de maior valor percebido.
 
 **Potenciais Implicações:**
 
@@ -53,6 +84,10 @@ Volume vs. Valor: Produtos com frete baixo são mais acessíveis em termos de vo
 
 Análise com base na satisfação dos clientes, considerando as vendas totais, a quantidade total de produtos, a média de vendas por produto e o número total de avaliações:
 
+<div align="center">
+<img src="https://github.com/umajessicar/Olist/issues/5#issue-2472217214" width="700px" />
+</div>
+
 **Insights:**
 
 - Engajamento e Satisfação: Há uma clara correlação entre a satisfação do cliente e o número de avaliações, com as categorias de alta satisfação gerando mais engajamento.
@@ -61,15 +96,10 @@ Análise com base na satisfação dos clientes, considerando as vendas totais, a
 
 
 
-# Qual o perfil dos produtos que mais venderam - categoria, média do valor de frete, média de avaliação de clientes.
 
-**Produtos Bem Avaliados Vendem Mais:** A correlação entre avaliações altas e volume de vendas é evidente, com a maioria dos produtos mais vendidos recebendo boas avaliações dos clientes.
 
-**Frete impacta diferentes categorias de maneiras variadas:** Produtos com fretes mais baixos como "Relógios e Presentes" podem estar em maior demanda devido ao custo adicional reduzido para o cliente. Em contrapartida, categorias como "Cool Stuff" ainda conseguem boas vendas, mesmo com fretes mais altos.
 
-**Alta Demanda por Categorias Específicas:** "Beleza e Saúde" e "Informática e Acessórios" são categorias de destaque, com múltiplos produtos entre os top 10, sugerindo que essas áreas podem ser alvos para expandir a linha de produtos.
 
-# O valor do frete tem relação com o volume de vendas?
 
 
 
