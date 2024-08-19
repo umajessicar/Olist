@@ -7,3 +7,4 @@ SELECT
 FROM {{ ref('order_items') }} oi
 JOIN {{ ref('Products') }} p ON oi.product_id = p.product_id
 GROUP BY oi.product_id, p.product_category_name
+order by 
