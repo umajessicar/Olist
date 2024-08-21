@@ -1,4 +1,4 @@
-# Análise Exploratória E-commerce (Olist)
+# Projeto de SQL com dados da Olist (e-commerce)
 Este projeto realiza uma série de análises sobre os dados de vendas da Olist, focando em diferentes aspectos como desempenho de produtos e a relação entre avaliações, frete e vendas. 
 Utilizei Google BigQuery como data warehouse para armazenar e consultar os dados, e dbt (Data Build Tool) para transformar e preparar os dados para análise.
 
@@ -29,7 +29,7 @@ Fiz uma query que junta dados de vendas de produtos (products_sales) com informa
 
 **Categoria de Beleza e Saúde:**
 
-Produtos dessa categoria são consistentemente bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
+Produtos dessa categoria são bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
 O frete para esses produtos varia, mas permanece relativamente acessível, o que pode estar contribuindo positivamente para a decisão de compra.
 
 **Categoria PCS:**
@@ -44,9 +44,7 @@ Embora tenha uma média de frete relativamente alta, os produtos desta categoria
 
 Esta categoria tem um grande número de comentários (468), mas a avaliação média é um pouco mais baixa (3,90). Isso pode indicar que, apesar da popularidade, há alguns problemas de qualidade ou expectativas não atendidas que podem estar afetando a percepção geral do produto.
 
-<div align="center">
-<img src="https://github.com/umajessicar/Olist/issues/4#issue-2472215138" width="700px" />
-</div>
+![produtos](https://github.com/user-attachments/assets/d5338d83-cbdf-4955-8f48-4152754b3b6a)
 
 **Outros Insights:**
 
@@ -61,9 +59,7 @@ Esta categoria tem um grande número de comentários (468), mas a avaliação m�
 
 Nesta análise, explorei a relação entre o custo de frete e o volume de vendas, buscando entender como diferentes faixas de frete impactam o comportamento de compra dos consumidores. Foram definidas duas categorias de valores de frete - Low (baixo), High (alto). Considerei Low todos os valores na média e abaixo dela, já a High, os valores são acima da média. 
 
-<div align="center">
-<img src="https://github.com/umajessicar/Olist/issues/3#issue-2472162937" width="700px" />
-</div>
+![frete](https://github.com/user-attachments/assets/62933683-70c6-425e-9e87-fef5919fb694)
 
 - A faixa de frete "Low" gerou um maior volume total de vendas ($7.232.882,81) em comparação com a faixa "High" ($6.358.760,89). Isso sugere que, em termos absolutos, produtos com frete mais baixo são mais populares ou têm uma demanda maior.
   
@@ -86,9 +82,8 @@ Volume vs. Valor: Produtos com frete baixo são mais acessíveis em termos de vo
 
 Análise com base na satisfação dos clientes, considerando as vendas totais, a quantidade total de produtos, a média de vendas por produto e o número total de avaliações:
 
-<div align="center">
-<img src="https://github.com/umajessicar/Olist/issues/5#issue-2472217214" width="700px" />
-</div>
+![reviews](https://github.com/user-attachments/assets/9dfe3f3e-aefe-4a8b-bed3-5c74165eed14)
+
 
 **Insights:**
 
@@ -96,7 +91,7 @@ Análise com base na satisfação dos clientes, considerando as vendas totais, a
 - Média de Vendas por Produto: Curiosamente, a média de vendas por produto é alta tanto em categorias de alta quanto de baixa satisfação, sugerindo que outros fatores além da satisfação também influenciam nas vendas.
 - Potencial de Melhoria: As categorias de satisfação média e baixa podem se beneficiar de estratégias para melhorar a satisfação do cliente, o que pode, por sua vez, aumentar as vendas e o engajamento.
 
-
+# Análise de Desempenho e Satisfação de Produtos por Categoria
 
 
 
