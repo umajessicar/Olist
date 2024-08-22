@@ -22,6 +22,8 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 
 **reviews_sales:** Análise da relação entre vendas e satisfação do cliente, categorizando produtos por nível de satisfação.
 
+**churn_prediction:** Análise preditiva para identificar o risco de churn.
+
 
 # Análise de Desempenho e Satisfação de Produtos por Categoria
 
