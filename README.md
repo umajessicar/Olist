@@ -91,8 +91,20 @@ Análise com base na satisfação dos clientes, considerando as vendas totais, a
 - Média de Vendas por Produto: Curiosamente, a média de vendas por produto é alta tanto em categorias de alta quanto de baixa satisfação, sugerindo que outros fatores além da satisfação também influenciam nas vendas.
 - Potencial de Melhoria: As categorias de satisfação média e baixa podem se beneficiar de estratégias para melhorar a satisfação do cliente, o que pode, por sua vez, aumentar as vendas e o engajamento.
 
-# Análise de Desempenho e Satisfação de Produtos por Categoria
+# Análise Preditiva de Churn 
 
+Esta análise preditiva tem como objetivo segmentar os clientes com base no tempo decorrido desde sua última compra, identificando o risco de churn de acordo com o comportamento de compra. Para isso, utilizei a data 17/10/2018 como ponto de referência para comparação e classificação dos clientes nos seguintes grupos:
+
+- High Risk (Alto Risco): Clientes que estão há mais de 90 dias sem realizar uma compra. Este grupo representa aqueles com maior probabilidade de churn, exigindo ações imediatas para tentar reverter o risco de cancelamento.
+
+- Medium Risk (Risco Médio): Clientes que estão entre 60 e 90 dias sem comprar. Estes clientes estão em uma zona intermediária, com chances significativas de churn, mas ainda passíveis de reengajamento com campanhas direcionadas.
+
+- Low Risk (Baixo Risco): Clientes que compraram nos últimos 60 dias, apresentando o menor risco de churn.
+
+
+A análise de churn revelou uma preocupante concentração de clientes em alto risco de cancelamento, com quase 90% dos clientes classificados nesta categoria.
+
+Isso sublinha a urgência de implementar estratégias de retenção focadas em reengajar esses clientes, enquanto se reforçam práticas de fidelização para manter os clientes de baixo risco engajados. O sucesso dessas intervenções poderá não apenas reduzir a taxa de churn, mas também revitalizar o crescimento e a sustentabilidade do negócio a longo prazo.
 
 
 
