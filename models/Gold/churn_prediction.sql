@@ -4,7 +4,7 @@ WITH customer_activity AS (
         DATE_DIFF(DATE '2018-10-17', MAX(purchase_date), DAY) AS days_since_last_order,
         COUNT(order_id) AS total_orders
     FROM 
-        `olist-428220`.`dbt_olist`.`Orders`
+        {{ ref('silver_table') }}
     GROUP BY 
         customer_id
 ),
