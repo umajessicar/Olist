@@ -4,19 +4,18 @@
 
 WITH product_sales AS (
   SELECT 
-    oi.product_id,
-    SUM(oi.price) AS total_sales
-  FROM {{ ref('order_items') }} oi
-  GROUP BY oi.product_id
+    s.product_id,
+    SUM(CAST(s.price AS FLOAT64)) AS total_sales
+  FROM {{ ref('silver_table') }} s
+  GROUP BY s.product_id
 ),
 product_reviews AS (
   SELECT 
-    oi.product_id,
-    AVG(CAST(r.review_score AS FLOAT64)) AS avg_rating,
-    COUNT(r.review_id) AS total_reviews
-  FROM {{ ref('order_items') }} oi
-  JOIN {{ ref('Reviews') }} r ON oi.order_id = r.order_id
-  GROUP BY oi.product_id
+    s.product_id,
+    AVG(CAST(s.review_score AS FLOAT64)) AS avg_rating,
+    COUNT(s.review_id) AS total_reviews
+  FROM {{ ref('silver_table') }} s
+  GROUP BY s.product_id
 ),
 high_sales_low_satisfaction AS (
   SELECT 
@@ -67,6 +66,7 @@ SELECT
 FROM all_satisfaction
 GROUP BY satisfaction_category
 ORDER BY total_sales DESC
+
 
 
 
