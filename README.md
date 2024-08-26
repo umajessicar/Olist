@@ -34,7 +34,7 @@ Este projeto tem como objetivo principal fornecer insights sobre o desempenho de
 
 **Análise de Frete:** Explorar a influência dos custos de frete no comportamento de compra e nas vendas totais, categorizando produtos por faixa de custo de frete (baixo ou alto).
 
-**Análise Preditiva de Churn:** Além das análises descritivas, o projeto também inclui uma análise preditiva focada em identificar clientes com alta probabilidade de churn (desistência). Modelos preditivos são aplicados para identificar padrões nos dados que possam prever o comportamento de churn, permitindo à Olist tomar ações proativas para reter clientes.
+**Análise Preditiva de Churn:** Além das análises descritivas, o projeto também inclui uma análise preditiva focada em identificar clientes com alta probabilidade de churn (desistência). Identificar esses padrões nos dados pode prever o churn, permitindo à Olist tomar ações proativas para reter clientes.
 
 # Estrutura do Projeto
 
