@@ -15,7 +15,9 @@ Esses dados são armazenados e consultados utilizando o Google BigQuery e, para 
 As principais transformações incluem:
 
 **Cálculo de Métricas de Vendas:** Como o total de vendas por produto, valor médio por pedido, e análise de frete.
+
 **Análise de Avaliações de Produtos:** Categorização dos produtos com base em métricas de satisfação do cliente, incluindo a classificação em categorias como 'Alta', 'Média' e 'Baixa' satisfação.
+
 **Integração de Dados:** Combinação de diversas fontes para criar uma visão unificada e abrangente sobre o desempenho dos produtos e comportamento dos clientes.
 
 # Objetivo do Projeto
