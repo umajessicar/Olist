@@ -5,12 +5,16 @@ A Olist é uma plataforma brasileira de e-commerce que oferece uma solução com
 Os dados utilizados neste projeto provêm de transações e interações dos clientes com a plataforma da Olist. As tabelas incluem:
 
 **Orders:** Contém informações sobre os pedidos realizados, como data de compra, aprovação, envio, e entrega.
+
 **Order Items:** Detalha os itens específicos comprados em cada pedido, incluindo preço, frete, e produto associado.
+
 **Products:** Fornece detalhes sobre os produtos disponíveis, como categoria, nome, e características.
+
 **Customers:** Informações sobre os clientes, incluindo localização, identificador único e dados demográficos.
+
 **Reviews:** Avaliações dos clientes, incluindo nota de satisfação e comentários sobre os produtos.
 
-Esses dados são armazenados e consultados utilizando o Google BigQuery e, para realizar as análises, foi utilizado o dbt (Data Build Tool), uma ferramenta  que permite transformar e preparar os dados de forma modular e eficiente. O dbt facilita a criação de modelos de dados reutilizáveis e otimiza as consultas SQL, organizando o fluxo de transformação em camadas, como bronze (dados brutos), silver (dados parcialmente transformados) e gold (dados prontos para análise).
+Esses dados são armazenados e consultados utilizando o Google BigQuery e, para realizar as análises, foi utilizado o dbt (Data Build Tool), uma ferramenta  que que facilita a criação de modelos de dados reutilizáveis e otimiza as consultas SQL, organizando o fluxo de transformação em camadas, como bronze (dados brutos), silver (dados parcialmente transformados) e gold (dados prontos para análise).
 
 As principais transformações incluem:
 
@@ -44,6 +48,10 @@ Silver: Dados limpos e enriquecidos.
 
 Gold: Dados finais prontos para análise, com as métricas e agregações necessárias.
 
+A imagem abaixo mostra o relacionamento entre elas:
+
+![tabelas](https://github.com/user-attachments/assets/c0c8adfa-bec0-494e-a276-1be38cf0be3d)
+
 **As tabelas finais deste projeto são:**
 
 **freight_sales:** Análise de vendas baseada na média do valor do frete.
@@ -57,16 +65,16 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 
 # Análise de Desempenho e Satisfação de Produtos por Categoria
 
-Fiz uma query que junta dados de vendas de produtos (products_sales) com informações de avaliações e comentários (product_reviews). A união entre essas duas tabelas é feita com base no product_id, e o resultado final é ordenado pela métrica de vendas totais (total_sales), listando os produtos mais vendidos primeiro.
+Com essa tabela, foi possível realizar a análise cruzada entre as métricas de vendas totais, avaliações dos clientes e custos de frete, proporcionando uma visão clara sobre quais produtos estão se destacando em termos de popularidade e qualidade percebida pelos consumidores.
 
 **Categoria de Beleza e Saúde:**
 
 Produtos dessa categoria são bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
-O frete para esses produtos varia, mas permanece relativamente acessível, o que pode estar contribuindo positivamente para a decisão de compra.
+O frete para esses produtos varia, mas permanece relativamente acessível (na média ou abaixo dela), o que pode estar contribuindo positivamente para a decisão de compra.
 
 **Categoria PCS:**
 
-Este produto específico apresenta um valor de pedido médio extremamente alto (R$ 1.397,12) e uma alta avaliação média (4,59). Isso pode indicar que o produto é de alta qualidade e provavelmente atende a um nicho específico, o que justifica o preço elevado e a boa recepção do público.
+Por se tratar de uma categoria de computadores, o valor médio do pedido é bem mais alto que a média (R$ 1.397,12). A alta avaliação média (4,59)  sugere que os produtos são de alta qualidade.
 
 **Categoria Informática e Acessórios:**
 
