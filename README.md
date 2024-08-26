@@ -1,6 +1,34 @@
 # Projeto de SQL com dados da Olist (e-commerce)
-Este projeto realiza uma série de análises sobre os dados de vendas da Olist, focando em diferentes aspectos como desempenho de produtos e a relação entre avaliações, frete e vendas. 
-Utilizei Google BigQuery como data warehouse para armazenar e consultar os dados, e dbt (Data Build Tool) para transformar e preparar os dados para análise.
+
+A Olist é uma plataforma brasileira de e-commerce que oferece uma solução completa para lojistas que desejam vender seus produtos em grandes marketplaces, como Mercado Livre e Amazon. Facilitando o processo de venda online, a Olist suporta a logística, gerenciamento de estoque e integração com múltiplos canais de venda. Esse modelo de negócio gera uma vasta quantidade de dados sobre transações, produtos e comportamento dos consumidores, fornecendo uma rica base para análises de business intelligence.
+
+Os dados utilizados neste projeto provêm de transações e interações dos clientes com a plataforma da Olist. As tabelas incluem:
+
+**Orders:** Contém informações sobre os pedidos realizados, como data de compra, aprovação, envio, e entrega.
+**Order Items:** Detalha os itens específicos comprados em cada pedido, incluindo preço, frete, e produto associado.
+**Products:** Fornece detalhes sobre os produtos disponíveis, como categoria, nome, e características.
+**Customers:** Informações sobre os clientes, incluindo localização, identificador único e dados demográficos.
+**Reviews:** Avaliações dos clientes, incluindo nota de satisfação e comentários sobre os produtos.
+
+Esses dados são armazenados e consultados utilizando o Google BigQuery e, para realizar as análises, foi utilizado o dbt (Data Build Tool), uma ferramenta  que permite transformar e preparar os dados de forma modular e eficiente. O dbt facilita a criação de modelos de dados reutilizáveis e otimiza as consultas SQL, organizando o fluxo de transformação em camadas, como bronze (dados brutos), silver (dados parcialmente transformados) e gold (dados prontos para análise).
+
+As principais transformações incluem:
+
+**Cálculo de Métricas de Vendas:** Como o total de vendas por produto, valor médio por pedido, e análise de frete.
+**Análise de Avaliações de Produtos:** Categorização dos produtos com base em métricas de satisfação do cliente, incluindo a classificação em categorias como 'Alta', 'Média' e 'Baixa' satisfação.
+**Integração de Dados:** Combinação de diversas fontes para criar uma visão unificada e abrangente sobre o desempenho dos produtos e comportamento dos clientes.
+
+# Objetivo do Projeto
+
+Este projeto tem como objetivo principal fornecer insights sobre o desempenho de vendas da Olist, com foco em diversas áreas:
+
+**Análise de Desempenho de Produtos:** Identificar os produtos mais e menos vendidos, avaliar a relação entre preço, frete e volume de vendas, e analisar como as avaliações dos clientes impactam as vendas.
+
+**Análise de Avaliações e Satisfação:** Examinar as avaliações dos clientes para entender a relação entre a satisfação do cliente e o desempenho do produto. Isso inclui a categorização de produtos com alta, média e baixa satisfação e a análise do impacto disso nas vendas.
+
+**Análise de Frete:** Explorar a influência dos custos de frete no comportamento de compra e nas vendas totais, categorizando produtos por faixa de custo de frete (baixo ou alto).
+
+**Análise Preditiva de Churn:** Além das análises descritivas, o projeto também inclui uma análise preditiva focada em identificar clientes com alta probabilidade de churn (desistência). Modelos preditivos são aplicados para identificar padrões nos dados que possam prever o comportamento de churn, permitindo à Olist tomar ações proativas para reter clientes.
 
 # Estrutura do Projeto
 
