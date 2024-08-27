@@ -140,7 +140,7 @@ Esta análise preditiva tem como objetivo segmentar os clientes com base no temp
 - Medium Risk (Risco Médio): Clientes que estão entre 60 e 90 dias sem comprar. Estes clientes estão em uma zona intermediária, com chances significativas de churn, mas ainda passíveis de reengajamento com campanhas direcionadas.
 
 - Low Risk (Baixo Risco): Clientes que compraram nos últimos 60 dias, apresentando o menor risco de churn.
-- 
+  
 ![churn](https://github.com/user-attachments/assets/6518f964-4a2c-4210-aad3-5c8d25977d68)
 
 A análise de churn revelou uma preocupante concentração de clientes em alto risco de cancelamento, com quase 90% dos clientes classificados nesta categoria.
