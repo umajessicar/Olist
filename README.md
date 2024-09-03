@@ -1,6 +1,40 @@
 # Projeto de SQL com dados da Olist (e-commerce)
-Este projeto realiza uma série de análises sobre os dados de vendas da Olist, focando em diferentes aspectos como desempenho de produtos e a relação entre avaliações, frete e vendas. 
-Utilizei Google BigQuery como data warehouse para armazenar e consultar os dados, e dbt (Data Build Tool) para transformar e preparar os dados para análise.
+
+A Olist é uma plataforma brasileira de e-commerce que oferece uma solução completa para lojistas que desejam vender seus produtos em grandes marketplaces, como Mercado Livre e Amazon. Facilitando o processo de venda online, a Olist suporta a logística, gerenciamento de estoque e integração com múltiplos canais de venda. Esse modelo de negócio gera uma vasta quantidade de dados sobre transações, produtos e comportamento dos consumidores, fornecendo uma rica base para análises de business intelligence.
+
+Os dados utilizados neste projeto provêm de transações e interações dos clientes com a plataforma da Olist. As tabelas incluem:
+
+**Orders:** Contém informações sobre os pedidos realizados, como data de compra, aprovação, envio, e entrega.
+
+**Order Items:** Detalha os itens específicos comprados em cada pedido, incluindo preço, frete, e produto associado.
+
+**Products:** Fornece detalhes sobre os produtos disponíveis, como categoria, nome, e características.
+
+**Customers:** Informações sobre os clientes, incluindo localização, identificador único e dados demográficos.
+
+**Reviews:** Avaliações dos clientes, incluindo nota de satisfação e comentários sobre os produtos.
+
+Esses dados são armazenados e consultados utilizando o Google BigQuery e, para realizar as análises, foi utilizado o dbt (Data Build Tool), uma ferramenta  que que facilita a criação de modelos de dados reutilizáveis e otimiza as consultas SQL, organizando o fluxo de transformação em camadas, como bronze (dados brutos), silver (dados parcialmente transformados) e gold (dados prontos para análise).
+
+As principais transformações incluem:
+
+**Cálculo de Métricas de Vendas:** Como o total de vendas por produto, valor médio por pedido, e análise de frete.
+
+**Análise de Avaliações de Produtos:** Categorização dos produtos com base em métricas de satisfação do cliente, incluindo a classificação em categorias como 'Alta', 'Média' e 'Baixa' satisfação.
+
+**Integração de Dados:** Combinação de diversas fontes para criar uma visão unificada e abrangente sobre o desempenho dos produtos e comportamento dos clientes.
+
+# Objetivo do Projeto
+
+Este projeto tem como objetivo principal fornecer insights sobre o desempenho de vendas da Olist, com foco em diversas áreas:
+
+**Análise de Desempenho de Produtos:** Identificar os produtos mais e menos vendidos, avaliar a relação entre preço, frete e volume de vendas, e analisar como as avaliações dos clientes impactam as vendas.
+
+**Análise de Avaliações e Satisfação:** Examinar as avaliações dos clientes para entender a relação entre a satisfação do cliente e o desempenho do produto. Isso inclui a categorização de produtos com alta, média e baixa satisfação e a análise do impacto disso nas vendas.
+
+**Análise de Frete:** Explorar a influência dos custos de frete no comportamento de compra e nas vendas totais, categorizando produtos por faixa de custo de frete (baixo ou alto).
+
+**Análise Preditiva de Churn:** Além das análises descritivas, o projeto também inclui uma análise preditiva focada em identificar clientes com alta probabilidade de churn (desistência). Identificar esses padrões nos dados pode prever o churn, permitindo à Olist tomar ações proativas para reter clientes.
 
 # Estrutura do Projeto
 
@@ -13,6 +47,10 @@ Bronze: Dados brutos carregados diretamente das fontes.
 Silver: Dados limpos e enriquecidos.
 
 Gold: Dados finais prontos para análise, com as métricas e agregações necessárias.
+
+A imagem abaixo mostra o relacionamento entre elas:
+
+![tabelas](https://github.com/user-attachments/assets/c0c8adfa-bec0-494e-a276-1be38cf0be3d)
 
 **As tabelas finais deste projeto são:**
 
@@ -27,16 +65,16 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 
 # Análise de Desempenho e Satisfação de Produtos por Categoria
 
-Fiz uma query que junta dados de vendas de produtos (products_sales) com informações de avaliações e comentários (product_reviews). A união entre essas duas tabelas é feita com base no product_id, e o resultado final é ordenado pela métrica de vendas totais (total_sales), listando os produtos mais vendidos primeiro.
+Com essa tabela, foi possível realizar a análise cruzada entre as métricas de vendas totais, avaliações dos clientes e custos de frete, proporcionando uma visão clara sobre quais produtos estão se destacando em termos de popularidade e qualidade percebida pelos consumidores.
 
 **Categoria de Beleza e Saúde:**
 
 Produtos dessa categoria são bem avaliados, com uma média de avaliações superior a 4,2. Isso, combinado com altos valores de venda, sugere que os consumidores estão satisfeitos com os produtos, o que pode estar impulsionando as vendas.
-O frete para esses produtos varia, mas permanece relativamente acessível, o que pode estar contribuindo positivamente para a decisão de compra.
+O frete para esses produtos varia, mas permanece relativamente acessível (na média ou abaixo dela), o que pode estar contribuindo positivamente para a decisão de compra.
 
 **Categoria PCS:**
 
-Este produto específico apresenta um valor de pedido médio extremamente alto (R$ 1.397,12) e uma alta avaliação média (4,59). Isso pode indicar que o produto é de alta qualidade e provavelmente atende a um nicho específico, o que justifica o preço elevado e a boa recepção do público.
+Por se tratar de uma categoria de computadores, o valor médio do pedido é bem mais alto que a média (R$ 1.397,12). A alta avaliação média (4,59)  sugere que os produtos são de alta qualidade.
 
 **Categoria Informática e Acessórios:**
 
@@ -102,7 +140,7 @@ Esta análise preditiva tem como objetivo segmentar os clientes com base no temp
 - Medium Risk (Risco Médio): Clientes que estão entre 60 e 90 dias sem comprar. Estes clientes estão em uma zona intermediária, com chances significativas de churn, mas ainda passíveis de reengajamento com campanhas direcionadas.
 
 - Low Risk (Baixo Risco): Clientes que compraram nos últimos 60 dias, apresentando o menor risco de churn.
-- 
+  
 ![churn](https://github.com/user-attachments/assets/6518f964-4a2c-4210-aad3-5c8d25977d68)
 
 A análise de churn revelou uma preocupante concentração de clientes em alto risco de cancelamento, com quase 90% dos clientes classificados nesta categoria.
