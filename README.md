@@ -97,25 +97,44 @@ Esta categoria tem um grande número de comentários (468), mas a avaliação m�
 
 # Volume Total de Vendas e Custo de Frete:
 
-Nesta análise, explorei a relação entre o custo de frete e o volume de vendas, buscando entender como diferentes faixas de frete impactam o comportamento de compra dos consumidores. Foram definidas duas categorias de valores de frete - Low (baixo), High (alto). Considerei Low todos os valores na média e abaixo dela, já a High, os valores são acima da média. 
+Nesta análise, explorei a relação entre o custo de frete, faixa de preço dos produtos e o volume de vendas, buscando entender como cada parâmetro impacta o comportamento de compra dos consumidores. 
 
-![frete](https://github.com/user-attachments/assets/62933683-70c6-425e-9e87-fef5919fb694)
+Para definir as faixas de valores de frete e produtos, considerei:
 
-- A faixa de frete "Low" gerou um maior volume total de vendas ($7.232.882,81) em comparação com a faixa "High" ($6.358.760,89). Isso sugere que, em termos absolutos, produtos com frete mais baixo são mais populares ou têm uma demanda maior.
-  
-**Número de Produtos Vendidos:**
+Para frete - Duas categorias de valores de frete - Low (baixo), High (alto), sendo o primeiro todos os valores na média e abaixo dela e "High" os valores acima da média. 
 
-- Um número significativamente maior de produtos foi vendido na faixa de frete "Low" (24.163 produtos) em comparação com a faixa "High" (8.788 produtos). Isso indica que os consumidores tendem a comprar mais produtos quando o frete é mais baixo.
-  
-**Média de Preço por Produto:**
+Para os produtos - Como o produto de maior valor é custa R$6.735 e a média de valores dos produtos é de R$120, considerei produtos de valor baixo igual ou abaixo de R$100, médio entre R$100 e R$500 e alto a partir de R$500.
 
-- No entanto, a média de preço por produto é significativamente maior para a faixa de frete "High" ($723,57) em comparação com a faixa de frete "Low" ($299,34). Isso sugere que, embora menos produtos sejam vendidos com frete mais alto, aqueles que são vendidos têm um valor unitário mais alto, ou seja, são produtos mais caros ou de maior valor percebido.
+![volume de vendas vs custo do frete](https://github.com/user-attachments/assets/b41b5375-b008-4cc4-84cc-effa2b387fb3)
+
+Analisando os resultados, podemos tirar algumas conclusões:
+
+**Produtos de Faixa de Preço Alta**
+
+**Frete Alto:** Essa categoria tem as maiores vendas totais ($2.547.174,58), com um preço médio por produto elevado ($973,32). Isso sugere que, embora o custo de frete seja alto, os consumidores que compram produtos caros estão dispostos a pagar mais pelo frete. Além disso, o valor médio de vendas por produto é muito alto ($1.939,97), indicando que produtos premium continuam vendendo bem, mesmo com custos de frete elevados.
+
+**Frete Baixo:** As vendas totais nessa categoria são consideravelmente menores ($441.504,74), com um preço médio por produto ainda alto ($726,16). Isso pode ser justificado pela menor quantidade disponível de produtos da categoria de preço alto com frete baixo em relação aos produtos de preço alto e frete alto (conforme tabela abaixo)
+
+![Capturar](https://github.com/user-attachments/assets/a9ec77c9-5109-4005-8a3a-c41f0a7513b5)
+
+
+**Produtos de Faixa de Preço Baixa:**
+
+**Frete Alto:** Um número elevado de produtos vendidos (5.471), mas um total de vendas relativamente baixo (R$749.466,08). O preço médio por produto é muito baixo (R$62,13), sugerindo que produtos baratos ainda são comprados, mas o frete alto pode estar limitando o volume total de vendas.
+
+**Frete Baixo:** Esta categoria apresenta o maior volume de vendas totais (R$2.991.538,41) e o maior número de produtos vendidos (17.818), apesar do preço médio por produto ser baixo ($49,25). Isso indica que, para produtos baratos, um frete baixo é um ponto crítico para aumentar o volume de vendas.
+
+**Produtos de Faixa de Preço Média:**
+
+**Frete Alto:** Apesar do frete elevado, essa categoria tem vendas totais significativas (R$3.339.606,09) e um preço médio por produto de R$198,87. O número de produtos vendidos (6.512) é relativamente alto, o que sugere que os consumidores aceitam um frete mais caro para produtos que não são nem tão caros nem tão baratos.
+
+**Frete Baixo:** Aqui, as vendas totais são as mais altas ($3.577.665,38), com um preço médio por produto de R$174,99, reforçando ainda mais a ideia de que o frete baixo é um fator importante para maximizar as vendas, mesmo para produtos de preço médio.
 
 **Potenciais Implicações:**
 
-Estratégia de Preço e Frete: Os dados indicam que, para produtos com maior valor agregado, um custo de frete mais alto pode ser justificado, pois o valor médio de venda por produto ainda é alto. Isso pode indicar uma menor sensibilidade ao preço do frete para itens de maior valor.
+**Estratégia de Preço e Frete:** Os dados sugerem que, para produtos de maior valor agregado, um custo de frete mais elevado pode ser justificado, pois o valor médio de venda por unidade permanece significativamente alto. Nesse contexto, é importante reavaliar a viabilidade de oferecer fretes com valores baixos para esses produtos, considerando que isso pode aumentar os custos operacionais da empresa. A análise também indica que os consumidores tendem a ser menos sensíveis ao preço do frete quando se trata de itens de maior valor, o que permite à empresa explorar estratégias de frete mais flexíveis e potencialmente mais lucrativas.
 
-Volume vs. Valor: Produtos com frete baixo são mais acessíveis em termos de volume de vendas, mas os produtos com frete alto oferecem maior valor por unidade vendida. Dependendo do objetivo da empresa (aumentar o volume de vendas ou maximizar a receita por produto), diferentes estratégias de precificação e frete podem ser aplicadas.
+**Volume vs. Valor:** Produtos com frete baixo são mais acessíveis em termos de volume de vendas, mas os produtos com frete alto oferecem maior valor por unidade vendida. Dependendo do objetivo da empresa (aumentar o volume de vendas ou maximizar a receita por produto), diferentes estratégias de precificação e frete podem ser aplicadas.
 
 
 # Como a satisfação do cliente influencia o desempenho de vendas e o engajamento em diferentes categorias de produtos?
@@ -133,17 +152,17 @@ Análise com base na satisfação dos clientes, considerando as vendas totais, a
 
 # Análise Preditiva de Churn 
 
-Esta análise preditiva tem como objetivo segmentar os clientes com base no tempo decorrido desde sua última compra, identificando o risco de churn de acordo com o comportamento de compra. Para isso, utilizei a data 17/10/2018 como ponto de referência para comparação e classificação dos clientes nos seguintes grupos:
+Esta análise preditiva tem como objetivo segmentar os clientes com base no tempo decorrido desde sua última compra, identificando o risco de churn de acordo com o comportamento de compra e procurando identificar alguns padrões para tais comportamentos (nota da avaliação, possíveis atrasos,  Para isso, utilizei a data 17/10/2018 como ponto de referência para comparação e classificação dos clientes nos seguintes grupos:
 
-- High Risk (Alto Risco): Clientes que estão há mais de 90 dias sem realizar uma compra. Este grupo representa aqueles com maior probabilidade de churn, exigindo ações imediatas para tentar reverter o risco de cancelamento.
+**High Risk (Alto Risco) - Clientes que estão há mais de 90 dias sem realizar uma compra:** Representndo o maior grupo, clientes em alto risco de churn experimentaram tempos de entrega significativamente mais longos e mais entregas atrasadas, resultando na menor pontuação média de avaliação. Esses fatores negativos podem estar contribuindo para a maior probabilidade de esses clientes deixarem de comprar novamente.
 
-- Medium Risk (Risco Médio): Clientes que estão entre 60 e 90 dias sem comprar. Estes clientes estão em uma zona intermediária, com chances significativas de churn, mas ainda passíveis de reengajamento com campanhas direcionadas.
+**Medium Risk (Risco Médio) - Clientes que estão entre 60 e 90 dias sem comprar:** Clientes de risco médio têm tempos de entrega e taxas de atraso menores do que os clientes de alto risco, mas ainda assim sofrem de desafios suficientes para colocar sua retenção em risco. Embora estejam mais satisfeitos do que os clientes de alto risco, há espaço para melhorias, especialmente no tempo de entrega, para evitar o churn.
 
-- Low Risk (Baixo Risco): Clientes que compraram nos últimos 60 dias, apresentando o menor risco de churn.
+**Low Risk (Baixo Risco) - Clientes que compraram nos últimos 60 dias:** Clientes de baixo risco sofreram menos com o tempo de entrega, sendo poucas atrasadas, e as melhores avaliações. Esses fatores contribuem para a alta satisfação e baixa probabilidade de churn. Esse grupo representa o perfil ideal que a empresa deve se esforçar para replicar em outras faixas de risco.
   
-![churn](https://github.com/user-attachments/assets/6518f964-4a2c-4210-aad3-5c8d25977d68)
+![churn](https://github.com/user-attachments/assets/fbce5618-1c8d-494e-8cfd-05e177c4ccc6)
 
-A análise de churn revelou uma preocupante concentração de clientes em alto risco de cancelamento, com quase 90% dos clientes classificados nesta categoria.
+A análise de churn revelou uma preocupante concentração de clientes em alto risco de cancelamento, com mais de 90% dos clientes classificados nesta categoria.
 
 Isso sublinha a urgência de implementar estratégias de retenção focadas em reengajar esses clientes, enquanto se reforçam práticas de fidelização para manter os clientes de baixo risco engajados. O sucesso dessas intervenções poderá não apenas reduzir a taxa de churn, mas também revitalizar o crescimento e a sustentabilidade do negócio a longo prazo.
 
