@@ -50,7 +50,8 @@ Gold: Dados finais prontos para análise, com as métricas e agregações necess
 
 A imagem abaixo mostra o relacionamento entre elas:
 
-![tabelas](https://github.com/user-attachments/assets/c0c8adfa-bec0-494e-a276-1be38cf0be3d)
+![relationship](https://github.com/user-attachments/assets/32d167f7-d6c4-4400-8aa6-12a412fafef0)
+
 
 **As tabelas finais deste projeto são:**
 
@@ -60,7 +61,7 @@ A imagem abaixo mostra o relacionamento entre elas:
 
 **reviews_sales:** Análise da relação entre vendas e satisfação do cliente, categorizando produtos por nível de satisfação.
 
-**churn_prediction:** Análise preditiva para identificar o risco de churn.
+**churn_analysis:** Análise preditiva para identificar o risco de churn e potenciais padrões.
 
 
 # Análise de Desempenho e Satisfação de Produtos por Categoria
