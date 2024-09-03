@@ -23,7 +23,7 @@ SELECT
     pr.avg_rating
 FROM 
     {{ ref('silver_table') }} s
-JOIN 
+LEFT JOIN 
     product_reviews pr ON s.product_id = pr.product_id
 GROUP BY
     s.product_id,
