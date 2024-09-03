@@ -37,4 +37,3 @@ FROM
 ORDER BY 
     number_of_customers DESC
 
-
