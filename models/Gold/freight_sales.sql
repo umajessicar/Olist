@@ -41,5 +41,3 @@ ORDER BY
     price_range,
     freight_range,
     total_sales DESC
-
-
