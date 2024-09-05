@@ -1,4 +1,4 @@
-# Projeto de SQL com dados da Olist (e-commerce)
+# Projeto em SQL e DBT-core com dados da Olist (e-commerce)
 
 A Olist é uma plataforma brasileira de e-commerce que oferece uma solução completa para lojistas que desejam vender seus produtos em grandes marketplaces, como Mercado Livre e Amazon. Facilitando o processo de venda online, a Olist suporta a logística, gerenciamento de estoque e integração com múltiplos canais de venda. Esse modelo de negócio gera uma vasta quantidade de dados sobre transações, produtos e comportamento dos consumidores, fornecendo uma rica base para análises de business intelligence.
 
